@@ -86,9 +86,9 @@ function makeNextGrid(oldGrid){
 
     //Check if value exists already, initialize it if not. undefined/none are counted as false
     if(!claimMap[key]){
-      claimMap[key] = []
-      claimMap[key].push(claim)
+      claimMap[key] = [] 
     }
+    claimMap[key].push(claim)
   }
 
   for(let key in claimMap){
