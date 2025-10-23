@@ -54,9 +54,9 @@ function handleConflict(claim_requests, grid){
     console.log(claim_requests)
     for(const [position, data] of Object.entries(claim_requests)){
 
-        //Make string into a list of x and y 
-        cords = position.split("_").map(Number)
-        
+        if (claim_requests[position].length() > 1){
+            console.log("NEED TO RESOLVE")
+        }
     }
 }
 
@@ -87,7 +87,7 @@ function makeNextGrid(oldGrid){
             if(data.isAvailable && data.state_of_cell != 1){
               if(expand){
                 // fill the cell at that empty position
-                // nextGrid[data.x][data.y] = 2
+                nextGrid[data.x][data.y] = 2
                 claim_requests[`${data.x}_${data.x}`].push({
                     "x" : data.x,
                     "y" : data.y,
